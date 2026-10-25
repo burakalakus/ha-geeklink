@@ -1,8 +1,8 @@
-# Geeklink for Home Assistant — 2.0.0-beta.2
+# Geeklink for Home Assistant — 2.0.0
 
 Target: Home Assistant Core **2026.10.2**, on Home Assistant OS. Local UDP port 9001; no cloud account or external Python process required.
 
-This beta adds automatic IP recovery under a single-hub assumption. The user reported that learning worked with other remotes on the previous beta. Automated tests still use simulated hardware; real reboot/IP recovery needs confirmation on the hub. The learn conversion and IR/RF transmission payloads are unchanged.
+Community integration with local IR/RF learning and automatic IP recovery under a single-hub assumption. The owner reports that the integration works on their setup. Automated tests use simulated hardware; compatibility with other hub models and firmware is not yet established. Please report your hub model and firmware when opening an issue.
 
 ## Install through HACS (recommended)
 
@@ -13,8 +13,7 @@ This beta adds automatic IP recovery under a single-hub assumption. The user rep
    Otherwise add **Geeklink** under Settings → Devices & services.
 5. Future updates can be downloaded through HACS, followed by a restart.
 
-This is a HACS custom repository, not a listing in the default catalog. Until
-GitHub releases are published, HACS installs the default branch. Back up your
+This is a HACS custom repository, not a listing in the default catalog. Select the latest release when installing. Back up your
 existing Geeklink directory before your first HACS installation. The package
 keeps the same `geeklink` domain, options format and command-storage keys.
 
@@ -68,7 +67,7 @@ light:
     command_off: "YOUR_EXISTING_CODE"
 ```
 
-Use the actual existing codes; the placeholders above will fail validation. New UI appliances and legacy lights addressed to the same IP share one communication lock. Adding the hub through the UI does not import, duplicate, or delete existing YAML entities. Automatic YAML-to-UI migration is not implemented in this beta. Keep your existing templates while you use the compatibility mode.
+Use the actual existing codes; the placeholders above will fail validation. New UI appliances and legacy lights addressed to the same IP share one communication lock. Adding the hub through the UI does not import, duplicate, or delete existing YAML entities. Automatic YAML-to-UI migration is not implemented in this release. Keep your existing templates while you use the compatibility mode.
 
 ## Automatic recovery when the hub IP changes
 
@@ -146,3 +145,7 @@ Remove any newly created UI Geeklink entry, restore your saved old `custom_compo
 Protocol derived from https://github.com/burakalakus/geeklink-python by Burak Alakuş. Distributed under the upstream GPLv3 license included in LICENSE. The original scripts remain in that repository; this dedicated integration repository contains the Home Assistant implementation.
 
 Run protocol tests with `python -m unittest discover -s tests -p 'test_protocol.py' -v` from this directory. See VALIDATION.md for the exact checks performed and limitations.
+
+## Branding
+
+The bundled icon is an original remote-control symbol for this community integration. It is not an official Geeklink manufacturer logo or a claim of endorsement.

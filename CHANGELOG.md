@@ -1,3 +1,9 @@
+# 2.0.0 — HACS catalog submission
+
+- Add HACS and Hassfest validation plus Core 2026.10.2 tests in GitHub Actions.
+- Add original integration icon assets and public compatibility guidance.
+- Retain the working beta.2 protocol, commands, entities and IP recovery.
+
 # 2.0.0-beta.2 — 2026-10-25
 
 - Assume one Geeklink hub; changing MAC addresses are not used for identity.
