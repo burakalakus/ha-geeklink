@@ -1,0 +1,17 @@
+{
+  "domain": "geeklink",
+  "name": "Geeklink",
+  "version": "2.0.0-beta.2",
+  "config_flow": true,
+  "documentation": "https://github.com/burakalakus/ha-geeklink",
+  "issue_tracker": "https://github.com/burakalakus/ha-geeklink/issues",
+  "dependencies": [
+    "persistent_notification"
+  ],
+  "codeowners": [
+    "@burakalakus"
+  ],
+  "requirements": [],
+  "iot_class": "local_push",
+  "integration_type": "hub"
+}

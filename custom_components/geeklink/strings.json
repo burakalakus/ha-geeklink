@@ -1,0 +1,110 @@
+{
+  "title": "Geeklink",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect Geeklink",
+        "description": "Enter the hub IPv4 address, or leave it empty to discover it on the same broadcast network. This integration assumes one Geeklink hub and automatically rediscovers it if its IP changes.",
+        "data": {
+          "host": "Hub IPv4 address (optional)"
+        }
+      },
+      "select_hub": {
+        "title": "Select discovered hub",
+        "data": {
+          "host": "Hub"
+        }
+      },
+      "reconfigure": {
+        "title": "Change Geeklink IP address",
+        "description": "Confirm this is the same physical hub. Its MAC identity is not available from this protocol.",
+        "data": {
+          "host": "New IPv4 address"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "No usable hub response. Check its IP and local network, then retry.",
+      "invalid_host": "Enter a unicast IPv4 address.",
+      "invalid_name": "Enter a name.",
+      "learning_failed": "No valid code received. Retry; keep the original remote near the hub. Unsupported reply formats are rejected.",
+      "missing_commands": "Learn and accept all required commands before saving.",
+      "identical_codes": "ON and OFF are identical. Use a Button / power toggle appliance for a toggle-only remote."
+    },
+    "abort": {
+      "already_configured": "This hub IP is already configured.",
+      "reconfigure_successful": "Hub address updated."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Manage Geeklink appliances",
+        "menu_options": {
+          "add": "Add appliance",
+          "edit": "Relearn appliance commands",
+          "remove": "Remove appliance"
+        }
+      },
+      "add": {
+        "title": "Add appliance",
+        "description": "Choose Button for a power-toggle remote. Enable STOP only for covers with a separate stop button.",
+        "data": {
+          "name": "Appliance name",
+          "kind": "Entity type",
+          "signal": "Signal type",
+          "stop": "Learn a stop command (covers only)"
+        }
+      },
+      "edit": {
+        "title": "Choose appliance to relearn",
+        "data": {
+          "appliance": "Appliance"
+        }
+      },
+      "remove": {
+        "title": "Choose appliance to remove",
+        "data": {
+          "appliance": "Appliance"
+        }
+      },
+      "confirm_remove": {
+        "title": "Remove {name}?",
+        "description": "This removes the UI appliance and its saved codes. Existing YAML definitions and the separate remote command library are unaffected."
+      },
+      "commands": {
+        "title": "Commands for {name}",
+        "description": "Choose a command to learn or relearn. Save only when all required codes have been accepted. Closing this dialog discards unsaved changes.",
+        "data": {
+          "command": "Command or save"
+        }
+      },
+      "ready": {
+        "title": "Prepare to learn {command}",
+        "description": "Have the original remote for {name} ready. Submit, wait for the learning indicator, then press {command}. Learning waits up to 30 seconds; other transmissions may briefly delay its start."
+      },
+      "review": {
+        "title": "Review {command}",
+        "description": "{message} Accept keeps the code in this draft; Save appliance commits it.",
+        "data": {
+          "action": "Next action"
+        }
+      }
+    },
+    "progress": {
+      "learning": "Learning {command} for {name}. Press the button on the original remote. Do not use the Geeklink app to send commands during learning."
+    },
+    "error": {
+      "cannot_connect": "No usable hub response. Check its IP and local network, then retry.",
+      "invalid_host": "Enter a unicast IPv4 address.",
+      "invalid_name": "Enter a name.",
+      "learning_failed": "No valid code received. Retry; keep the original remote near the hub. Unsupported reply formats are rejected.",
+      "missing_commands": "Learn and accept all required commands before saving.",
+      "identical_codes": "ON and OFF are identical. Use a Button / power toggle appliance for a toggle-only remote."
+    },
+    "abort": {
+      "no_appliances": "No UI appliances yet. Choose Add appliance first. Existing YAML lights are managed in YAML.",
+      "options_changed": "Settings changed in another window. Reopen Configure to avoid overwriting those changes."
+    }
+  }
+}
